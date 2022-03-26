@@ -1,11 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
+import { colors } from './theme'
 
 export default createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background-color: #4992FC;
+        background-color: ${colors.backgroundColor};
 
         button, a {
             outline: none;

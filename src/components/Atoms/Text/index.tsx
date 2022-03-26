@@ -1,13 +1,18 @@
 import React from 'react';
+import { TextProps } from './interfaces'
+import { TextComponent } from './styles';
 
-interface IText { 
-    textSize?: 'small' | 'medium' | 'big';
-    weight?: 'light' | 'normal' | 'bold';
-}
-
-const Text: React.FC<IText> = ({ children }) => {
+const Text: React.FC<TextProps> = ({ weight, size, dataTest, children, color, ...props }) => {
     return (
-        <h1>{children}</h1>
+        <TextComponent
+         weight={weight}
+         size={size}
+         color={color}
+         className={props.className}
+         data-testid={dataTest}
+        >
+            {children}
+        </TextComponent>
     )
 }
 

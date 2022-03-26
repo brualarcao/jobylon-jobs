@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from './styles';
-import { Molecules } from '../components';
+import * as Molecules from '../components/Molecules'
 
 const DefaultTemplate: React.FC = ({ children }) => {
     return (
         <Container data-testid="default_template">
             <Molecules.Header />
+            <Molecules.SearchInput placeholder="Type here to start find your job..." handleSearch={() => console.log('test')}/>
             {children}
         </Container>
     )
