@@ -1,11 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
-import App from './App'
+import Bootstrap from './Bootstrap'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Bootstrap />
   </React.StrictMode>,
   document.getElementById('root')
 )
