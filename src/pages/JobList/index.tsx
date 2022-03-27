@@ -1,13 +1,13 @@
 import React from 'react';
 import * as Atoms from '../../components/Atoms';
+import * as Molecules from '../../components/Molecules'
 import { JobListContainer } from './styles';
 
 const JobList: React.FC = () => {
     return (
         <JobListContainer>
-            <Atoms.Text size="large" color="white">
-            Hi Jobylon User!
-            </Atoms.Text>
+            <Molecules.Card />
+            <Molecules.DetailsCard />
         </JobListContainer>
     )
 }

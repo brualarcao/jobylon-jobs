@@ -7,8 +7,10 @@ export function AppRoutes() {
         <BrowserRouter>
         <DefaultTemplate>
             <Routes>
-                <Route path="/" element={<JobList />} />
-                <Route path="/jobs" element={<PageNotFound />} />
+                <Route path="/jobs" element={<JobList />} />
+                <Route path="/historic" element={<PageNotFound />} />
+                <Route path="/messages" element={<PageNotFound />} />
+                <Route path="/profile" element={<PageNotFound />} />
             </Routes>
         </DefaultTemplate>
         </BrowserRouter>

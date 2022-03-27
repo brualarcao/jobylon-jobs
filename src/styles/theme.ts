@@ -5,7 +5,7 @@ export const colors = {
     allWhiteTextColor: '#FFFFFF',
     textLightColor: '#7D7D86',
     textDarkColor: '#181A1B',
-    blueColor: '#2B2ECF',
+    blueColor: '#0A94FA',
 };
 
 export const fontStyle = {
