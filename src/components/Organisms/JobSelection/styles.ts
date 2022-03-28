@@ -43,5 +43,6 @@ export const SortByOption = styled.div`
 
     button { 
         color: ${colors.blueColor};
+        background-color: transparent;
     }
 `;
