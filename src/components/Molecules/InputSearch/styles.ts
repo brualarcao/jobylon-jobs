@@ -11,7 +11,7 @@ export const InputSearchContainer = styled.div`
 
     background-color: ${colors.backgroundLighterColor};
 
-    width: 90%;
+    width: 99%;
     height: 60px;
 
     margin: 15px 0;

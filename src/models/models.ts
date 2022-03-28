@@ -103,4 +103,36 @@ export interface IApiResponse {
     name: string;
     email: string;
   }
+  export interface IList extends IEmptyList {
+    jobs: IJob[];
+    setSelectedJob: (job: IJob) => void;
+    loading: boolean;
+  }
+  
+  export interface IEmptyList {
+    error: boolean;
+  }
+
+  export interface IJobInfo {
+    job: IJob;
+    loading: boolean;
+    error: boolean;
+  }
+  
+  export interface IJobInfoStyle {
+    hide: boolean;
+  }
+
+  export interface ISelect {
+    options: ISelectOption[];
+    onChange: (value: string) => void;
+    disabled?: boolean;
+  }
+  
+  export interface ISelectOption {
+    id: number;
+    label: string;
+    value: string;
+  }
+  
   

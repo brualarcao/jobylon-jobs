@@ -31,7 +31,7 @@ const SearchInput: React.FC<InputSearchProps> = ({ handleSearch, placeholder, ..
                 disabled={props.disabled}
                 datat-testid="button_search"
               >
-                  Find your Job!
+                  Search
               </Atoms.Button>
           </InputSearchContainer>
       )

@@ -9,7 +9,7 @@ export const JobListContainer = styled.div`
     width: 100%;
     height: 100%;
 
-    max-width: 1440px;
-
     padding: 10px;
+
+    max-width: 1620px;
 `;

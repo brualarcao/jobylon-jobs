@@ -44,6 +44,10 @@ export const TextComponent = styled.p<TextProps>`
         ${!!weight && textOptions.weight[weight]()};
         ${!!color && textOptions.colors[color]()};
     `};
+    
+    strong {
+        background-color: transparent;
+    }
 
     background-color: transparent;
 
