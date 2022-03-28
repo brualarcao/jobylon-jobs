@@ -14,8 +14,8 @@ const CardJob: React.FC<ICard> = ({ company, locations, employment_type, experie
     return (
         <CardContainer
             onClick={props.onClick}
-            selected={selectedJob.id === selectedJobId}
-            data-testid="card"
+            selected={selectedJob?.id === selectedJobId}
+            data-testid="card_container"
         >
             <CompanyLogo src={logo} />
             <TextArea className="title_text">

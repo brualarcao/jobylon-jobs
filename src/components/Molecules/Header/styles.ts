@@ -20,6 +20,10 @@ export const Container = styled.div`
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
 
+    a { 
+        background-color: transparent;
+    }
+
     @media (max-width: ${breakpoints.tablet}) {
         width: 100vw;
         padding: 0 15px;

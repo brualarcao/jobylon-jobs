@@ -11,3 +11,10 @@ export const PageNotFoundContainer = styled.div`
 
     padding: 10px;
 `;
+
+export const BackgroundImg = styled.img`
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+`;

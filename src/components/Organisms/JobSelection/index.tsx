@@ -67,18 +67,18 @@ const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, error })
       }, [jobs]);
 
       return (
-        <JobListContainer>
-          <Molecules.SearchInput placeholder="Search, Find & Apply" handleSearch={handleSearch}/>
-          <SortByOption>
-             <Atoms.Dropdown options={orderByOptions} onChange={handleSortBy} disabled={loading}  />
-             <button onClick={handleClearFilter}>
+        <JobListContainer data-testid="jobList_container">
+          <Molecules.SearchInput placeholder="Search, Find & Apply" handleSearch={handleSearch} data-testid="jobList_searchInput"/>
+          <SortByOption data-testid="jobList_sortBy">
+             <Atoms.Dropdown options={orderByOptions} onChange={handleSortBy} disabled={loading} data-testid="jobList_dropdown" />
+             <button onClick={handleClearFilter} data-testid="jobList_resetFilters">
                 <Atoms.Text size="small" weight="bold">
                     Reset Filters
                 </Atoms.Text>
             </button>
           </SortByOption>
           {filteredJobs.length > 0 ? (
-              <JobSelectionContainer>
+              <JobSelectionContainer data-testid="jobs_container">
                   {filteredJobs.map((job) => {
                       const { company, locations, id, employment_type, experience, title } = job;
                       return (
@@ -91,7 +91,7 @@ const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, error })
                           title={title}
                           onClick={() => handleCardClick(job)}
                           selectedJobId={id}
-                          loading={loading}                          
+                          loading={loading}      
                           />
                       );
                   })}

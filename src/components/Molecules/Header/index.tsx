@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import JobylonLogo from '../../../assets/svg/favicon.svg'
 import ProfileImg from '../../../assets/images/profile.jpg'
-import { FaSearch, FaBook, FaPen, FaUserEdit, FaAlignJustify, FaTimes } from 'react-icons/fa'
+import { FaSearch, FaBook, FaPen, FaUserEdit } from 'react-icons/fa'
 import { Container, Logo, LogoContent } from './styles'
 
 import { EMenuOptions } from '../../../enums/menuOptions'
@@ -52,12 +52,15 @@ const Header: React.FC = () => {
     return (
         <Container data-testid="header">
             <LogoContent>
+            <a href="/">
             <Logo src={JobylonLogo} />
+            </a>
             <Atoms.Text size='large' weight='bold' color='lighter' >
                 Jobylon
             </Atoms.Text>
+            
             </LogoContent>
-            <Molecules.Menu options={options} open={hamburguerMenu} />
+            <Molecules.Menu options={options} />
             <Atoms.Avatar  src={ProfileImg}/>
         </Container>
     )
