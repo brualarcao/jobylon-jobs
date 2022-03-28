@@ -85,7 +85,7 @@ $ yarn dev
 This project have a unitary tests, check the coverage typing this instructions below:
 
 ```bash
-yarn test --coverage --watchAll false
+yarn test --collectCoverage
 ```
 
 This report can be accessed at: "coverage/lcov-report/index.html"
