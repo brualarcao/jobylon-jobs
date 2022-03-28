@@ -88,7 +88,7 @@ This project have a unitary tests, check the coverage typing this instructions b
 yarn test --collectCoverage
 ```
 
-This report can be accessed at: "coverage/lcov-report/index.html"
+This report will be available on your terminal screen.
 
 
 ##
