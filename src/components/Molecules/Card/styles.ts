@@ -49,8 +49,8 @@ export const TextArea = styled.div`
 `;
 
 export const CompanyLogo = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 
     background-color: transparent;
 

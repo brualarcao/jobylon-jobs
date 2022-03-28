@@ -49,6 +49,11 @@ export const TextComponent = styled.p<TextProps>`
         background-color: transparent;
     }
 
+    h5 {
+        color: ${colors.blueColor};
+        background-color: transparent;
+    }
+
     background-color: transparent;
 
     text-align: start;

@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { colors } from '../../../styles/theme';
 import { IJobInfoStyle } from '../../../models/models';
 
-
 export const JobInfoContainer = styled.div<IJobInfoStyle>`
     display: flex;
     flex-direction: column;
@@ -15,7 +14,7 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
 
     width: 100%;
 
-    height: 60%;
+    height: min-content;
 
     border: 1px solid ${colors.blueColor};
 
@@ -56,7 +55,9 @@ export const JobInfoDescription = styled.div`
     
     background-color: ${colors.backgroundLighterColor};
 
-    height: 520px;
+    height: auto;
+
+    margin-bottom: 6px;
 
     overflow-y: scroll;
 
@@ -85,9 +86,84 @@ export const JobInfoDescription = styled.div`
   }
 `;
 
+export const ReviewedInfos = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    width: 80%;
+    height: 70px;
+
+    margin: 15px 0;
+
+    border: 1px solid ${colors.blueColor};
+    border-radius: 12px;
+`;
+
+export const InfoSection = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    background-color: transparent;
+
+    justify-content: center;
+
+    border-right: 1px solid ${colors.blueColor};
+
+    &:last-child {
+        border: none;
+    }
+`;
+
+export const OwnerContainer = styled.div`
+    display: flex;
+    width: 40%;
+    height: auto;
+
+    margin: 12px 0;
+
+    background-color: transparent;
+
+    border: 1px solid ${colors.blueColor};
+    border-radius: 12px;
+
+    justify-content: center;
+    align-items: center;
+
+    align-self: center;
+
+    div {
+        background-color: transparent;
+        flex-direction: column;
+    }
+`;
+
+export const NavigationSection = styled.div`
+    display: flex;
+
+    background-color: transparent;
+
+    justify-content: center;
+
+    margin: 12px 0;
+`;
+
+export const ButtonNavigation = styled.button`
+    background-color: ${colors.blueColor};
+    color: ${colors.allWhiteTextColor};
+
+    border-radius: 12px;
+
+    margin-right: 12px;
+
+    width: 230px;
+    height: 40px;
+`;
+
+
+
 export const LogoCompany = styled.img`
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
 
     margin: 24px 0;
 `;
