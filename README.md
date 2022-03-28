@@ -77,7 +77,7 @@ $ yarn dev
 
  * See the list of available jobs and all the informations provided.
 
- * If you like of a job opportunity, select that and will see more details and be able to go to the page for subscribe in the proccess.
+ * If you like of a job opportunity, select that and will see more details and be able to go to the page for subscribe in the process.
 
 <div id="tests"></div>
 
