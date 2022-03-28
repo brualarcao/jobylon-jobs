@@ -42,7 +42,7 @@ Technologies used to create this project:
 
 ## 💻 Configure your environment
 
-### You will need
+### You will need 
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/)
@@ -54,6 +54,7 @@ Technologies used to create this project:
 $ git clone https://github.com/brualarcao/jobylon-jobs && cd jobylon-jobs
 ```
 
+## 💻 For Windows Users
 
 **Follow the commands below to install all the dependencies**
 
@@ -67,7 +68,24 @@ $ yarn dev
 
 # Ready! You can now access the project on (http://localhost.com:3000) in your browser.
 ```
+## 💻 For Linux Users
 
+**Follow the commands below to install all the dependencies**
+
+```bash
+# Install the npm
+$ sudo apt install npm
+
+
+# Install the dependencies
+$ npm install
+
+
+# When it finish, type:
+$ npm run dev
+
+# Ready! You can now access the project on (http://localhost.com:3000) in your browser.
+```
 
 <div id="use"></div>
 
@@ -81,14 +99,21 @@ $ yarn dev
 
 <div id="tests"></div>
 
-## 👨🏻‍🔧 Tests
+## 👨🏻‍🔧 Tests (Windows)
 This project have a unitary tests, check the coverage typing this instructions below:
 
+For windows users:
 ```bash
 yarn test --collectCoverage
 ```
 
+For Linux users:
+```bash
+npm run test --collectCoverage
+```
+
 This report will be available on your terminal screen.
+
 
 
 ##
