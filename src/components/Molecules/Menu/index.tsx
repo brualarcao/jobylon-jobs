@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaAlignJustify, FaTimes } from 'react-icons/fa';
 import { IMenuOptions } from './interfaces';
 
 import { MenuContainer, MenuOption } from './styles';
@@ -11,13 +10,13 @@ const Menu: React.FC<IMenuOptions> = ({ options, open }) => {
     const windowWidth = window.innerWidth;
 
     return (
-        <MenuContainer open={open}>
+        <MenuContainer open={open} data-testid="menu_container">
             {options.map(({ id, label, icon, route }) => (
                 <MenuOption 
                  key={id}
                  onClick={() => navigate(`${route}`)}
                  selected={ route === activeOption }
-                 datat-testid={`option_${label}`}
+                 data-testid="option"
                 >
                  {!!icon && icon} {label}
              </MenuOption>

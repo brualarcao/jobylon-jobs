@@ -19,7 +19,6 @@ export const JobProvider: React.FC = ({ children }) => {
           setSelectedJob(data[0]);
           setError(false);
           setLoading(false); 
-          console.log('Data received: ', data);
       } catch (error) {
           setError(true);
           console.log('Error on API: ', error)

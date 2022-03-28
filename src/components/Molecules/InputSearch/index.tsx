@@ -15,7 +15,7 @@ const SearchInput: React.FC<InputSearchProps> = ({ handleSearch, placeholder, ..
       }, [inputRef.current, handleSearch]);
 
       return (
-          <InputSearchContainer datat-testid="input_search">
+          <InputSearchContainer data-testid="input_search">
               <InputSearch 
                 ref={inputRef}
                 placeholder={placeholder}
@@ -29,7 +29,6 @@ const SearchInput: React.FC<InputSearchProps> = ({ handleSearch, placeholder, ..
                 height={'100%'}
                 onClick={handleOnClick}
                 disabled={props.disabled}
-                datat-testid="button_search"
               >
                   Search
               </Atoms.Button>

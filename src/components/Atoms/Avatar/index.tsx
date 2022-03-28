@@ -6,7 +6,7 @@ import * as Atoms from '../index';
 
 const Avatar: React.FC<AvatarProps> = ({ src, alt, size="large" }) => {
     return (
-        <AvatarContainer>
+        <AvatarContainer data-testid="avatar_container">
             <AvatarImg 
             src={src} 
             alt={alt} 

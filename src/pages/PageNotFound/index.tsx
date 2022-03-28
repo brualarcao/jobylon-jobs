@@ -1,13 +1,12 @@
 import React from 'react';
 import * as Atoms from '../../components/Atoms';
-import { PageNotFoundContainer } from './styles';
+import PageNotFoundImg from '../../assets/images/404.png';
+import { PageNotFoundContainer, BackgroundImg } from './styles';
 
 const PageNotFound: React.FC = () => {
     return (
-        <PageNotFoundContainer>
-            <Atoms.Text size="large" color="white">
-            Ops! Sorry, page not founded! 
-            </Atoms.Text>
+        <PageNotFoundContainer data-testid="pageNotFound_container">
+            <BackgroundImg src={PageNotFoundImg} data-testid="pageNotfound_image"/>
         </PageNotFoundContainer>
     )
 }
