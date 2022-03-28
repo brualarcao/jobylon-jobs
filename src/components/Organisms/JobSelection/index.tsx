@@ -14,7 +14,12 @@ const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, error })
 
     const handleCardClick = useCallback(
         (job: IJob) => {
-            setSelectedJob(job);
+            if (windowWidth <= 1000) {
+                const { urls } = job;
+                window.open(urls.ad);
+            } else {
+                setSelectedJob(job);
+            }
         },
         [windowWidth, window]
       );

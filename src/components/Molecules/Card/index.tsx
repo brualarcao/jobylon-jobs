@@ -18,7 +18,7 @@ const CardJob: React.FC<ICard> = ({ company, locations, employment_type, experie
             data-testid="card"
         >
             <CompanyLogo src={logo} />
-            <TextArea>
+            <TextArea className="title_text">
                 <Atoms.Text size="large" color="white">
                     {title}
                 </Atoms.Text>
@@ -26,7 +26,7 @@ const CardJob: React.FC<ICard> = ({ company, locations, employment_type, experie
                     {name}
                 </Atoms.Text>
             </TextArea>
-            <TextArea>
+            <TextArea className="location_text">
                 <Atoms.Text size="normal" color="white">
                     <FaLocationArrow /> {location.text}
                 </Atoms.Text>

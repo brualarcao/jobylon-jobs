@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { breakpoints, colors } from '../../../styles/theme';
 
 export const Container = styled.div`
     display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
     top: 0;
 
     height: 60px;
-    width: 100%;
+    width: 100vw;
 
     align-items: center;
     justify-content: space-between;
@@ -20,8 +20,16 @@ export const Container = styled.div`
     border-bottom-right-radius: 12px;
     border-bottom-left-radius: 12px;
 
-    .logo_content {
-        display: flex;
+    @media (max-width: ${breakpoints.tablet}) {
+        width: 100vw;
+        padding: 0 15px;
+        p { 
+            display: none;
+        }
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+        padding: 0;
     }
 `;
 
@@ -32,6 +40,8 @@ export const LogoContent = styled.div`
 `;
 
 export const Logo = styled.img`
+    display: flex;
+    position: relative;
     background-color: transparent;
 
     align-self: center;
@@ -39,8 +49,12 @@ export const Logo = styled.img`
 
     width: 30px;
     height: 30px;
-`;
 
-export const Menu = styled.div`
-    display: flex;
+    margin-left: 15px;
+
+    @media (max-width: ${breakpoints.smallMobile}) {
+        margin-left: 5px;
+        width: 25px;
+        height: 25px;    
+    }
 `;

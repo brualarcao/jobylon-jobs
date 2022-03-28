@@ -1,15 +1,17 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { FaAlignJustify, FaTimes } from 'react-icons/fa';
 import { IMenuOptions } from './interfaces';
 
 import { MenuContainer, MenuOption } from './styles';
 
-const Menu: React.FC<IMenuOptions> = ({ options }) => {
+const Menu: React.FC<IMenuOptions> = ({ options, open }) => {
     const navigate = useNavigate();
     const activeOption = useLocation().pathname;
+    const windowWidth = window.innerWidth;
 
     return (
-        <MenuContainer>
+        <MenuContainer open={open}>
             {options.map(({ id, label, icon, route }) => (
                 <MenuOption 
                  key={id}

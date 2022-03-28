@@ -7,8 +7,14 @@ export interface IMenuOption {
 
 export interface IMenuSelected {
     selected: boolean;
+    open?: boolean;
 }
 
 export interface IMenuOptions {
     options: IMenuOption[];
+    open?: boolean;
+}
+
+export interface ContainerProps {
+    open?: boolean;
 }

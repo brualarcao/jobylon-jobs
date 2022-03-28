@@ -22,8 +22,9 @@ export const fontStyle = {
 };
 
 export const breakpoints = {
-    smallMobile: '375px',
-    mobile: '480px',
-    tablet: '768px',
-    laptop: '1024px',
+    superSmallMobile: '310px',
+    smallMobile: '430px',
+    mobile: '600px',
+    tablet: '980px',
+    laptop: '1200px',
 }

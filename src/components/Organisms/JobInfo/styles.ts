@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { breakpoints, colors } from '../../../styles/theme';
 import { IJobInfoStyle } from '../../../models/models';
 
 export const JobInfoContainer = styled.div<IJobInfoStyle>`
@@ -14,7 +14,7 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
 
     width: 100%;
 
-    height: min-content;
+    height: fit-content;
 
     border: 1px solid ${colors.blueColor};
 
@@ -30,6 +30,10 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
     margin-top: 10px;
     color: ${colors.blueColor};
     background-color: transparent;
+    }
+
+    @media (max-width: ${breakpoints.laptop}) {
+        display: none;
     }
 `;
 
@@ -55,7 +59,9 @@ export const JobInfoDescription = styled.div`
     
     background-color: ${colors.backgroundLighterColor};
 
-    height: auto;
+    height: 100%;
+
+    max-height: 300px;
 
     margin-bottom: 6px;
 

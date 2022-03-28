@@ -4,7 +4,7 @@ import { IJobInfo } from '../../../models/models';
 
 import { LogoCompany, NavigationSection, ButtonNavigation, OwnerContainer, JobInfoContainer, JobInfoDescription, JobInfoHeader, ReviewedInfos, InfoSection } from './styles'
 
-const JobInfo: React.FC<IJobInfo> = ({ job, loading, error }) => {
+const JobInfo: React.FC<IJobInfo> = ({ job, error }) => {
     return (
         <JobInfoContainer hide={error}>
             <JobInfoHeader>

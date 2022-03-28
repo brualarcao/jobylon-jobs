@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import JobylonLogo from '../../../assets/svg/favicon.svg'
 import ProfileImg from '../../../assets/images/profile.jpg'
-import { FaSearch, FaBook, FaPen, FaUserEdit } from 'react-icons/fa'
+import { FaSearch, FaBook, FaPen, FaUserEdit, FaAlignJustify, FaTimes } from 'react-icons/fa'
 import { Container, Logo, LogoContent } from './styles'
 
 import { EMenuOptions } from '../../../enums/menuOptions'
@@ -10,6 +10,18 @@ import * as Atoms from '../../Atoms';
 import { Molecules } from '../..';
 
 const Header: React.FC = () => {
+  const [hamburguerMenu, setHamburguerMenu] = useState<boolean>(false);
+  const [normalMenu, setNormalMenu] = useState<boolean>(true);
+  const windowWidth = window.innerWidth;
+
+  useEffect(() => {
+    if (windowWidth <= 980) {
+      setHamburguerMenu(true);
+    } else {
+      setHamburguerMenu(false);
+    }
+  }, [windowWidth]);
+
     const options = [
         {
           id: 1,
@@ -45,7 +57,7 @@ const Header: React.FC = () => {
                 Jobylon
             </Atoms.Text>
             </LogoContent>
-            <Molecules.Menu options={options} />
+            <Molecules.Menu options={options} open={hamburguerMenu} />
             <Atoms.Avatar  src={ProfileImg}/>
         </Container>
     )

@@ -58,4 +58,12 @@ export const TextComponent = styled.p<TextProps>`
 
     text-align: start;
     margin-left: 0.5em;
+
+    @media (max-width: ${breakpoints.mobile}) {
+        font-size: ${fontStyle.size.normal};
+    }
+
+    @media (max-width: ${breakpoints.smallMobile}) {
+        font-size: ${fontStyle.size.small};
+    }
 `;

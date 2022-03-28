@@ -19,6 +19,8 @@ export const JobSelectionContainer = styled.div`
 
     width: 100%;
 
+    height: auto;
+
     background-color: transparent;
 
     overflow-y: scroll;

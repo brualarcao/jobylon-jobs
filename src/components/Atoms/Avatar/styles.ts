@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { breakpoints } from '../../../styles/theme';
 import { AvatarProps } from './interfaces';
 
 const types = {
@@ -18,11 +19,19 @@ const types = {
 
 export const AvatarContainer = styled.div`
     display: flex;
+    position: relative;
     margin: 1px 5px;
 
     background-color: transparent;
 
     align-items: center;
+
+    @media (max-width: ${breakpoints.smallMobile}) {
+        margin: 1px 3px;   
+    }
+    @media (max-width: ${breakpoints.superSmallMobile}) {
+        display: none;
+    }
 `;
 
 export const AvatarInfo = styled.div`
@@ -38,4 +47,9 @@ export const AvatarImg = styled.img<AvatarProps>`
         ${!!size && types[size]()}
     `}
     border-radius: 50px;
+
+    @media (max-width: ${breakpoints.smallMobile}) {
+        height: 25px;
+        width: 25px;   
+    }
 `;

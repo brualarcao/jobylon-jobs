@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../../styles/theme';
+import { breakpoints, colors } from '../../../styles/theme';
 import { ICardStyles } from './interfaces';
 
 export const CardContainer = styled.button<ICardStyles>`
@@ -32,7 +32,12 @@ export const CardContainer = styled.button<ICardStyles>`
     border: 3px solid ${colors.blueColor};
     `}
 
-
+@media (max-width: ${breakpoints.smallMobile}) { 
+    grid-template-columns: 1fr 1fr;
+        .location_text {
+            display: none;
+        }
+     };
 `;
 
 export const TextArea = styled.div`
@@ -45,7 +50,7 @@ export const TextArea = styled.div`
 
     max-width: 360px;
 
-    background-color: transparent;
+    background-color: transparent;    
 `;
 
 export const CompanyLogo = styled.img`
@@ -78,6 +83,10 @@ export const Tag = styled.div`
     border-radius: 8px;
 
     margin-bottom: 8px;
+
+    @media (max-width: ${breakpoints.smallMobile}) {
+        display: none;
+    }
 `;
 
 export const TagArea = styled.div`

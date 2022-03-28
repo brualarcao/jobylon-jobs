@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, fontStyle } from '../../../styles/theme';
+import { breakpoints, colors, fontStyle } from '../../../styles/theme';
 import { ButtonProps } from './interfaces';
 
 export const ButtonContainer = styled.button<ButtonProps>`
@@ -27,4 +27,9 @@ export const ButtonContainer = styled.button<ButtonProps>`
         opacity: 0.5;
         cursor: not-allowed;
     }
+
+    @media (max-width: ${breakpoints.smallMobile}) { 
+            font-size: ${fontStyle.size.small};
+            font-weight: ${fontStyle.weight.normal};            
+     };
 `;
