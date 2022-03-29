@@ -18,7 +18,10 @@ export const fontStyle = {
         light: '300',
         normal: '400',
         bold: '700',
-    }
+    },
+    type: {
+        primary: 'Roboto, sans-serif',
+    },
 };
 
 export const breakpoints = {

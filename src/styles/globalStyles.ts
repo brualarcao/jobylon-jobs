@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { colors } from './theme'
+import { colors, fontStyle } from './theme'
 
 export default createGlobalStyle`
     * {
@@ -7,6 +7,8 @@ export default createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         background-color: ${colors.backgroundColor};
+
+        font-family: ${fontStyle.type.primary};
 
         button, a {
             outline: none;
