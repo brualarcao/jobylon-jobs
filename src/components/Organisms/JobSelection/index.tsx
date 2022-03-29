@@ -1,24 +1,29 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import * as Atoms from '../../Atoms';
 import * as Molecules from '../../Molecules';
+import * as Organisms from '../index';
 import { IJob, IList } from '../../../models/models';
 import { sortBy } from '../../../utils/sortBy';
 import { JobSelectionContainer, JobListContainer, SortByOption } from './styles'
 import { orderByOptions } from '../../../models/orderByOptions';
+import { useJobs } from '../../../hooks/usejobs';
 
 
-const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, error }) => {
+const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, setShowModal, error }) => {
     const [filteredJobs, setFilteredJobs] = useState<IJob[]>([]);
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [search, setSearch] = useState('');
+    const { selectedJob } = useJobs();
     const windowWidth = window.innerWidth;
 
     const handleCardClick = useCallback(
         (job: IJob) => {
-            if (windowWidth <= 1000) {
+            if (windowWidth <= 630) {
                 const { urls } = job;
                 window.open(urls.ad);
             } else {
                 setSelectedJob(job);
+                setModalOpen(true);
             }
         },
         [windowWidth, window]
@@ -98,7 +103,18 @@ const JobSelection: React.FC<IList> = ({ jobs, setSelectedJob, loading, error })
               </JobSelectionContainer>
               ) : (
                   !loading && <h2>Sorry, something wrong happened.</h2>
-              )}           
+              )}
+              {modalOpen && (
+                <Organisms.JobInfo 
+                job={selectedJob} 
+                loading={loading} 
+                error={error} 
+                open={modalOpen}
+                onTrigger={(value: boolean) => {
+                  setModalOpen(value);
+                }}
+                />
+              )}   
         </JobListContainer>
       )
 }

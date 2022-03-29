@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as Atoms from '../../Atoms';
 import { IJobInfo } from '../../../models/models';
+import { VscChromeClose } from 'react-icons/vsc';
 
-import { LogoCompany, NavigationSection, ButtonNavigation, OwnerContainer, JobInfoContainer, JobInfoDescription, JobInfoHeader, ReviewedInfos, InfoSection } from './styles'
+import { ModalContainer, ModalContent, LogoCompany, NavigationSection, ButtonNavigation, OwnerContainer, JobInfoContainer, JobInfoDescription, JobInfoHeader, ReviewedInfos, InfoSection } from './styles'
+import { handleClickOutsideAndEsc } from '../../../utils/handleClickOutsideAndEsc';
 
-const JobInfo: React.FC<IJobInfo> = ({ job, error }) => {
+const JobInfo: React.FC<IJobInfo> = ({ job, error, open, onTrigger }) => {
+
+    const wrapperRef = useRef(document.createElement('div'));
+
+    useEffect(() => {
+        handleClickOutsideAndEsc(wrapperRef, open);
+      }, [wrapperRef, open]);
+
     return (
+        <ModalContainer open={open} hide={error}>
         <JobInfoContainer hide={error} data-testid="jobInfo_container">
+            <ModalContent ref={wrapperRef}>
+            <button
+              className="closeModal_button"
+              data-testid="button-trigger-modal"
+              type="button"
+              onClick={() => onTrigger(false)}
+            >
+              <VscChromeClose />
+            </button>
             <JobInfoHeader data-testid="jobInfo_header">
                 <LogoCompany src={job?.company?.logo} />
                 <Atoms.Text size="large" color="lighter">
@@ -61,7 +80,9 @@ const JobInfo: React.FC<IJobInfo> = ({ job, error }) => {
                     Apply
                 </ButtonNavigation>
             </NavigationSection>
+            </ModalContent>
         </JobInfoContainer>
+        </ModalContainer>
     )
 }
 

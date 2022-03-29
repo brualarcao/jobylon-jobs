@@ -1,9 +1,88 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { breakpoints, colors } from '../../../styles/theme';
 import { IJobInfoStyle } from '../../../models/models';
 
+const modalAnimation = keyframes`
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
+export const ModalContainer = styled.div<IJobInfoStyle>`
+  display: none;
+  background: ${colors.backgroundLighterColor};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+
+  animation: ${modalAnimation} 0.35s;
+
+  max-width: 80vw;
+  width: 80vw;
+
+  margin: 5% auto;
+
+  border: 1px solid ${colors.blueColor};
+
+  border-radius: 8px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  };
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: ${colors.blueColor};
+  };
+
+  ${props =>
+    props.open &&
+    css`
+      display: block;
+    `};
+
+    @media (max-width: ${breakpoints.mobile}) {
+        display: none;
+    }
+`;
+
+export const ModalContent = styled.main`
+  width: 100%;
+  height: calc(100% - 95px);
+  background-color: ${colors.backgroundLighterColor};
+
+  display: flex;
+  flex-direction: column;
+
+  .closeModal_button {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    color: ${colors.blueColor};
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+
+    img, svg {
+        background-color: transparent;
+        width: 45px;
+        height: 45px;
+    }
+  }
+`;
+
 export const JobInfoContainer = styled.div<IJobInfoStyle>`
     display: flex;
+    justify-content: center;
     flex-direction: column;
 
     padding: 0 15px;
@@ -14,11 +93,9 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
 
     width: 100%;
 
-    height: fit-content;
+    height: 100%;
 
-    border: 1px solid ${colors.blueColor};
-
-    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    margin: 15px 0;
 
     ${props => props.hide && `
         display: none;
@@ -32,7 +109,7 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
     background-color: transparent;
     }
 
-    @media (max-width: ${breakpoints.laptop}) {
+    @media (max-width: ${breakpoints.mobile}) {
         display: none;
     }
 `;
@@ -46,7 +123,7 @@ export const JobInfoHeader = styled.div`
 
     background-color: ${colors.backgroundLighterColor};
 
-    min-height: 200px;
+    height: auto;
 
     p {
         text-align: center;
@@ -61,7 +138,7 @@ export const JobInfoDescription = styled.div`
 
     height: 100%;
 
-    max-height: 300px;
+    max-height: 200px;
 
     margin-bottom: 6px;
 
@@ -132,6 +209,7 @@ export const OwnerContainer = styled.div`
     border: 1px solid ${colors.blueColor};
     border-radius: 12px;
 
+    justify-self: center;
     justify-content: center;
     align-items: center;
 
@@ -140,6 +218,13 @@ export const OwnerContainer = styled.div`
     div {
         background-color: transparent;
         flex-direction: column;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        img {
+            width: 35px;
+            height: 35px;
+        }
     }
 `;
 

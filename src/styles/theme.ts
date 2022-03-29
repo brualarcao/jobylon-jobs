@@ -24,7 +24,7 @@ export const fontStyle = {
 export const breakpoints = {
     superSmallMobile: '310px',
     smallMobile: '430px',
-    mobile: '600px',
+    mobile: '630px',
     tablet: '980px',
     laptop: '1200px',
 }

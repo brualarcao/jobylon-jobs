@@ -107,6 +107,7 @@ export interface IApiResponse {
     jobs: IJob[];
     setSelectedJob: (job: IJob) => void;
     loading: boolean;
+    setShowModal?: boolean;
   }
   
   export interface IEmptyList {
@@ -117,10 +118,14 @@ export interface IApiResponse {
     job: IJob;
     loading: boolean;
     error: boolean;
+    open?: boolean;
+    onTrigger: (arg: boolean) => void;
   }
   
   export interface IJobInfoStyle {
     hide: boolean;
+    open?: boolean;
+    onTrigger?: (arg: boolean) => void;
   }
 
   export interface ISelect {

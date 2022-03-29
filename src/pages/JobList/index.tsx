@@ -11,7 +11,6 @@ const JobList: React.FC = () => {
     return (
         <JobListContainer>
             <Organisms.JobSelection jobs={jobs} setSelectedJob={setSelectedJob} error={error} loading={loading} />
-            <Organisms.JobInfo job={selectedJob} loading={loading} error={error} />
         </JobListContainer>
     )
 }
