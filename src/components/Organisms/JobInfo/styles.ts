@@ -21,6 +21,8 @@ export const ModalContainer = styled.div<IJobInfoStyle>`
   bottom: 0;
   z-index: 10;
 
+  height: 90%;
+
   align-items: center;
 
   animation: ${modalAnimation} 0.35s;
@@ -57,7 +59,7 @@ export const ModalContainer = styled.div<IJobInfoStyle>`
 
 export const ModalContent = styled.main`
   width: 100%;
-  height: calc(100% - 95px);
+  height: auto;
   background-color: ${colors.backgroundLighterColor};
 
   display: flex;
@@ -95,7 +97,9 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
 
     width: 100%;
 
-    height: 100%;
+    max-height: 95%;
+    height: auto;
+
 
     margin: 15px 0;
 
@@ -124,6 +128,10 @@ export const JobInfoHeader = styled.div`
     flex-direction: column;
     align-items: center;
 
+    margin-top: 20px;
+
+    padding-top: 12px;
+
     border-bottom: 1px solid ${colors.blueColor};
 
     background-color: ${colors.backgroundLighterColor};
@@ -139,20 +147,21 @@ export const JobInfoDescription = styled.div`
     display: flex;
     flex-direction: column;
 
+    position: relative;
+
     align-items: center;
 
     align-self: center;
     
     background-color: ${colors.backgroundLighterColor};
 
-    height: 100%;
+    height: auto;
+    max-height: 300px;
 
     max-width: 900px;
     width: 100%;
 
-    max-height: 230px;
-
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 
     overflow-y: scroll;
 
@@ -169,8 +178,7 @@ export const JobInfoDescription = styled.div`
 
     ul {
     list-style-position: inside;
-    margin: 0;
-    list-style-type: none;
+    list-style-type: circle;
     background-color: ${colors.backgroundLighterColor};
     };
 
@@ -213,7 +221,7 @@ export const InfoSection = styled.div`
 export const OwnerContainer = styled.div`
     display: flex;
     width: 40%;
-    height: auto;
+    height: 15%;
 
     margin: 12px 0;
 
