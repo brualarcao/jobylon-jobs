@@ -65,7 +65,7 @@ const companyMock = {
   describe('Job List Component', () => {
     it('Should render a Job List and be able to select one card', () => {
       const { getByTestId } = render(
-        <JobSelection jobs={jobsMock} setSelectedJob={setSelected} loading={false} error={false} />
+        <JobSelection jobs={jobsMock} setSelectedJob={setSelected} loading={false} error={false}/>
       );
   
       const jobList_container = getByTestId('jobList_container');

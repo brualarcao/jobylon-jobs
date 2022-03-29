@@ -3,6 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import JobInfo from './index';
 
 window.open = jest.fn();
+const onTrigger = jest.fn();
 
 const companyMock = {
     id: 2,
@@ -62,7 +63,7 @@ const companyMock = {
   describe('JobInfo Component', () => {
     it('Should render JobInfo Component', () => {
       const { getByTestId } = render(
-        <JobInfo job={jobMock} loading={false} error={false} />
+        <JobInfo job={jobMock} loading={false} error={false} open={true} onTrigger={() => onTrigger}/>
       );
   
       const jobInfo_container = getByTestId('jobInfo_container');
@@ -83,7 +84,7 @@ const companyMock = {
     });
   
     it('Should be able to click on buttons to navigate', () => {
-      const { getByTestId } = render(<JobInfo job={jobMock} loading={false} error={false} />);
+      const { getByTestId } = render(<JobInfo job={jobMock} loading={false} error={false} open={true} onTrigger={() => onTrigger} />);
   
       const buttonAd = getByTestId('button_ad');
       const buttonApply = getByTestId('button_apply');
