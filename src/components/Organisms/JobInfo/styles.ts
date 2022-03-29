@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from 'styled-components';
-import { breakpoints, colors } from '../../../styles/theme';
+import { breakpoints, colors, fontStyle } from '../../../styles/theme';
 import { IJobInfoStyle } from '../../../models/models';
 
 const modalAnimation = keyframes`
@@ -20,6 +20,8 @@ export const ModalContainer = styled.div<IJobInfoStyle>`
   right: 0;
   bottom: 0;
   z-index: 10;
+
+  align-items: center;
 
   animation: ${modalAnimation} 0.35s;
 
@@ -97,12 +99,15 @@ export const JobInfoContainer = styled.div<IJobInfoStyle>`
 
     margin: 15px 0;
 
+    align-items: center;
+
     ${props => props.hide && `
         display: none;
     `}
 
     h4 {
     text-align: start;
+    align-self: center;
     margin-bottom: 10px;
     margin-top: 10px;
     color: ${colors.blueColor};
@@ -133,12 +138,19 @@ export const JobInfoHeader = styled.div`
 export const JobInfoDescription = styled.div`
     display: flex;
     flex-direction: column;
+
+    align-items: center;
+
+    align-self: center;
     
     background-color: ${colors.backgroundLighterColor};
 
     height: 100%;
 
-    max-height: 200px;
+    max-width: 900px;
+    width: 100%;
+
+    max-height: 230px;
 
     margin-bottom: 6px;
 
@@ -165,6 +177,7 @@ export const JobInfoDescription = styled.div`
     p,
     strong,
     li {
+        align-self: flex-start;
         background-color: ${colors.backgroundLighterColor};
   }
 `;
@@ -241,6 +254,8 @@ export const NavigationSection = styled.div`
 export const ButtonNavigation = styled.button`
     background-color: ${colors.blueColor};
     color: ${colors.allWhiteTextColor};
+
+    font-weight: ${fontStyle.weight.bold};
 
     border-radius: 12px;
 
