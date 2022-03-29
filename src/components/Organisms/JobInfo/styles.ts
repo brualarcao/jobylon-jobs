@@ -178,7 +178,7 @@ export const JobInfoDescription = styled.div`
 
     ul {
     list-style-position: inside;
-    list-style-type: circle;
+    list-style-type: none;
     background-color: ${colors.backgroundLighterColor};
     };
 
