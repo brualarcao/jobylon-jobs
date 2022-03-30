@@ -32,7 +32,7 @@ export const ModalContainer = styled.div<IJobInfoStyle>`
 
   margin: 5% auto;
 
-  border: 1px solid ${colors.blueColor};
+  border: 3px solid ${colors.blueColor};
 
   border-radius: 8px;
   overflow-y: scroll;
@@ -132,7 +132,7 @@ export const JobInfoHeader = styled.div`
 
     padding-top: 12px;
 
-    border-bottom: 1px solid ${colors.blueColor};
+    border-bottom: 3px solid ${colors.blueColor};
 
     background-color: ${colors.backgroundLighterColor};
 
@@ -194,12 +194,12 @@ export const ReviewedInfos = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 
-    width: 80%;
-    height: 70px;
+    width: 90%;
+    height: 90px;
 
     margin: 15px 0;
 
-    border: 1px solid ${colors.blueColor};
+    border: 3px solid ${colors.blueColor};
     border-radius: 12px;
 `;
 
@@ -211,7 +211,14 @@ export const InfoSection = styled.div`
 
     justify-content: center;
 
-    border-right: 1px solid ${colors.blueColor};
+    border-right: 3px solid ${colors.blueColor};
+
+    svg {
+        background-color: transparent;
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+    }
 
     &:last-child {
         border: none;
@@ -223,16 +230,15 @@ export const OwnerContainer = styled.div`
     width: 40%;
     height: 15%;
 
-    margin: 12px 0;
+    margin: 10px 0;
 
-    background-color: transparent;
+    background-color: ${colors.backgroundColor};
 
     border: 1px solid ${colors.blueColor};
     border-radius: 12px;
 
-    justify-self: center;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 
     align-self: center;
 
@@ -241,10 +247,24 @@ export const OwnerContainer = styled.div`
         flex-direction: column;
     }
 
+    img {
+        width: 80px;
+        height: 80px;
+
+        border-radius: 40px;
+
+        margin: 10px;
+    }
+
     @media (max-width: ${breakpoints.tablet}) {
         img {
-            width: 35px;
-            height: 35px;
+            width: 45px;
+            height: 45px;
+
+            margin-left: 10px;
+        }
+        p {
+            font-size: ${fontStyle.size.small};
         }
     }
 `;
@@ -256,7 +276,7 @@ export const NavigationSection = styled.div`
 
     justify-content: center;
 
-    margin: 12px 0;
+    margin: 8px 0;
 `;
 
 export const ButtonNavigation = styled.button`
@@ -280,4 +300,25 @@ export const LogoCompany = styled.img`
     height: 100px;
 
     margin: 24px 0;
+`;
+
+export const FooterInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+
+    margin: 6px 0;
+    padding: 12px;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    
+    color: ${colors.textLightColor};
+
+    img {
+        width: 180px;
+        color: ${colors.blueColor};
+        background-color: transparent;
+    }
 `;

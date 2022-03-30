@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import * as Atoms from '../../Atoms';
 import { IJobInfo } from '../../../models/models';
+import { FaReadme, FaTachometerAlt, FaIndustry } from 'react-icons/fa'
 import { VscChromeClose } from 'react-icons/vsc';
+import { BsFillCalendarDateFill } from 'react-icons/bs';
+import JobylonFooterLogo from '../../../assets/svg/jobylon-footer-logo.svg';
 
-import { ModalContainer, ModalContent, LogoCompany, NavigationSection, ButtonNavigation, OwnerContainer, JobInfoContainer, JobInfoDescription, JobInfoHeader, ReviewedInfos, InfoSection } from './styles'
+import { ModalContainer, ModalContent, LogoCompany, NavigationSection, ButtonNavigation, OwnerContainer, JobInfoContainer, JobInfoDescription, JobInfoHeader, ReviewedInfos, InfoSection, FooterInfo } from './styles'
 import { handleClickOutsideAndEsc } from '../../../utils/handleClickOutsideAndEsc';
 
 const JobInfo: React.FC<IJobInfo> = ({ job, error, open, onTrigger }) => {
@@ -37,22 +40,22 @@ const JobInfo: React.FC<IJobInfo> = ({ job, error, open, onTrigger }) => {
             <ReviewedInfos data-testid="reviewedInfo_container">
                 <InfoSection>
                 <Atoms.Text size="small" color="white">
-                    {job?.experience}
+                   <FaTachometerAlt /> {job?.experience}
                 </Atoms.Text>
                 </InfoSection>
                 <InfoSection>
                 <Atoms.Text size="small" color="white">
-                   Posted since {job?.from_date}
+                  <BsFillCalendarDateFill /> Posted since {job?.from_date}
                 </Atoms.Text>
                 </InfoSection>
                 <InfoSection>
                 <Atoms.Text size="small" color="white">
-                   {job?.function}
+                   <FaReadme /> {job?.function}
                 </Atoms.Text>
                 </InfoSection>
                 <InfoSection>
                 <Atoms.Text size="small" color="white">
-                   {job?.company?.industry}
+                  <FaIndustry /> {job?.company?.industry}
                 </Atoms.Text>
                 </InfoSection>
             </ReviewedInfos>
@@ -80,6 +83,10 @@ const JobInfo: React.FC<IJobInfo> = ({ job, error, open, onTrigger }) => {
                     Apply
                 </ButtonNavigation>
             </NavigationSection>
+            <FooterInfo>
+                Powered by
+                <img src={JobylonFooterLogo} alt="Jobylon Logo" />
+            </FooterInfo>
             </ModalContent>
         </JobInfoContainer>
         </ModalContainer>
